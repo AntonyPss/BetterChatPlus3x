@@ -1,0 +1,238 @@
+{
+    "namespace": "chat_settings",
+
+    // ============================================
+    // CHAT SETTINGS CONTENT
+    // ============================================
+
+    "option_toggle_state_template": {
+        "type": "image",
+        "size": [30, 16],
+        "anchor_from": "top_left",
+        "anchor_to": "top_left"
+    },
+
+    "option_toggle_on@chat_settings.option_toggle_state_template": {
+        "texture": "textures/toggles/toggle_on"
+    },
+
+    "option_toggle_off@chat_settings.option_toggle_state_template": {
+        "texture": "textures/toggles/toggle_off"
+    },
+
+    "option_toggle_on_hover@chat_settings.option_toggle_state_template": {
+        "texture": "textures/toggles/toggle_on_hover"
+    },
+
+    "option_toggle_off_hover@chat_settings.option_toggle_state_template": {
+        "texture": "textures/toggles/toggle_off_hover"
+    },
+
+    "label_with_toggle": {
+        "type": "panel",
+        "$show_option_label": false,
+        "$toggle_focus_id|default": "toggle_focus_id",
+        "$toggle_focus_override_up|default": "none",
+        "$toggle_focus_override_down|default": "none",
+        "size": ["100%", 24],
+
+        "controls": [
+            {
+                "label@settings_common.white_label": {
+                    "text": "$toggle_title",
+                    "text_alignment": "left",
+                    "anchor_from": "left_middle",
+                    "anchor_to": "left_middle",
+                    "size": ["default", "default"]
+                }
+            },
+            {
+                "toggle": {
+                    "type": "panel",
+                    "size": ["100%", "100%"],
+                    "controls": [
+                        {
+                            "common@$toggle_wrapper": {
+                                "anchor_from": "right_middle",
+                                "anchor_to": "right_middle",
+                                "size": [36, 24],
+                                "$focus_id": "$toggle_focus_id",
+                                "$focus_override_up": "$toggle_focus_override_up",
+                                "$focus_override_down": "$toggle_focus_override_down"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+
+    "typeface_dropdown": {
+        "$option_dropdown_size": ["100%", 28]
+    },
+
+    "colors_dropdown_base": {
+        "$option_dropdown_size": ["100%", 28]
+    },
+
+    "chat_setting_scrolling_panel": {
+        "$scroll_size": [4, "100% - 4px"],
+        "size": ["100%", "100%"]
+    },
+
+    "chat_settings_scrolling_content/chat_settings_content_area": {
+        "$default_border_visible": false,
+        "$hover_border_visible": false,
+
+        "$light_toggle_default_text_color": [0.12, 0.12, 0.12],
+        "$light_toggle_hover_text_color": [0.12, 0.12, 0.12],
+        "$light_toggle_checked_default_text_color": [0.12, 0.12, 0.12],
+        "$light_toggle_checked_hover_text_color": [0.12, 0.12, 0.12],
+
+        "$default_texture": "textures/buttons/secondary/default",
+        "$hover_texture": "textures/buttons/secondary/hover",
+        "$pressed_texture": "textures/buttons/secondary/pressed",
+        "$pressed_no_hover_texture": "textures/buttons/secondary/default",
+        "modifications": [
+            {
+                "control_name": "mute_all_toggle",
+                "operation": "replace",
+                "value": [
+                    {
+                        "paddingTop": {
+                            "type": "panel",
+                            "size": [0, 4]
+                        }
+                    },
+                    {
+                        "toggle_0@chat_settings.label_with_toggle": {
+                            
+                            "$toggle_title": "chat.settings.muteAll",
+                            "$toggle_wrapper": "chat_settings.mute_all_toggle",
+                            "$toggle_focus_id": "mute_all_toggle_focus_id",
+                            "$toggle_focus_override_down": "mute_emote_toggle_focus_id"
+                        }
+                    }
+                ]
+            },
+            {
+                "control_name": "mute_emote_chat_toggle",
+                "operation": "replace",
+                "value": [
+                    {
+                        "toggle_1@chat_settings.label_with_toggle": {
+                            "$toggle_title": "chat.settings.muteEmotes",
+                            "$toggle_wrapper": "chat_settings.mute_emote_chat_toggle",
+                            "$toggle_focus_id": "mute_emote_toggle_focus_id",
+                            "$toggle_focus_override_up": "mute_all_toggle_focus_id",
+                            "$toggle_focus_override_down": "chat_tts_toggle_focus_id"
+                        }
+                    }
+                ]
+            },
+            {
+                "control_name": "chat_tts_toggle",
+                "operation": "replace",
+                "value": [
+                    {
+                        "toggle_2@chat_settings.label_with_toggle": {
+                            "$toggle_title": "chat.settings.tts",
+                            "$toggle_wrapper": "chat_settings.chat_tts_toggle",
+                            "$toggle_focus_id": "chat_tts_toggle_focus_id",
+                            "$toggle_focus_override_up": "mute_emote_toggle_focus_id",
+                            "$toggle_focus_override_down": "reset_button_focus_id"
+                        }
+                    }
+                ]
+            },
+            {
+                "control_name": "reset_button",
+                "operation": "remove"
+            }
+        ]
+    },
+
+    "accept_secondary_button@common_buttons.secondary_button": {
+        "$pressed_button_name": "button.close_chat_settings",
+        "$button_text": "gui.accept"
+    },
+
+    "reset_danger_button@common_buttons.danger_button": {
+        "$focus_id": "reset_button_focus_id",
+        "$focus_override_up": "chat_tts_toggle_focus_id",
+        "$pressed_button_name": "button.reset_chat_settings",
+        "$button_text": "options.dev_resetToDefault"
+    },
+
+    // Chat Settings Popup //
+    "background": {
+        "type": "image",
+        "texture": "textures/dialog/chat_settings_background"
+    },
+
+    "main_panel_two_buttons": {
+        "type": "panel",
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "controls": [
+            {
+                "common_panel@common.common_panel": {
+                    "$dialog_background": "chat_settings.background",
+                    "$show_close_button": false
+                }
+            },
+            {
+                "title_label@common_dialogs.title_label": {
+                    "$text_name": "chat.settings",
+                    "$title_text_color": "white"
+                }
+            },
+            {
+                "panel_indent": {
+                    "type": "panel",
+                    "size": ["100% - 24px", "100% - 98px"],
+                    "offset": [0, 27],
+                    "anchor_from": "top_middle",
+                    "anchor_to": "top_middle",
+                    "controls": [
+                        {
+                            "child_control@chat_settings.chat_setting_scrolling_panel": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "top@chat_settings.accept_secondary_button": {
+                    "size": ["100% - 16px", 26],
+                    "offset": [0, -36],
+                    "anchor_from": "bottom_middle",
+                    "anchor_to": "bottom_middle"
+                }
+            },
+            {
+                "bottom@chat_settings.reset_danger_button": {
+                    "size": ["100% - 16px", 26],
+                    "offset": [0, -8],
+                    "anchor_from": "bottom_middle",
+                    "anchor_to": "bottom_middle"
+                }
+            }
+        ]
+    },
+
+    "chat_settings_popup": {
+        "$popup_type": "chat_settings.main_panel_two_buttons",
+        "size": "$chat_settings_screen_size",
+        "$chat_settings_screen_size|default": [280, 240],
+        "variables": [
+            {
+                "requires": "$desktop_screen",
+                "$chat_settings_screen_size": [300, 230]
+            },
+            {
+                "requires": "$pocket_screen",
+                "$chat_settings_screen_size": [240, 210]
+            }
+        ]
+    }
+}

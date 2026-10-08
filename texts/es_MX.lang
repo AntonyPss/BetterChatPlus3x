@@ -1,0 +1,13 @@
+chat.coordinateText=Coordenadas
+chat.coordinatePosition=Posición del jugador
+chat.coordinateTypePosition=Posición
+chat.coordinateTypeFacing=Orientación
+chat.notesButtonText=Notas temporales
+chat.notesTitleText=Tus Notas
+chat.notesBox.placeHolder=Escribe aquí tus notas...
+chat.notesWarning=Al salir del mundo, las notas §cdesaparecerán§r.
+chat.textBox.placeHolder=Escribe aquí tu texto...
+chat.calculator.title=Calculadora
+chat.sidebar.title=Herramientas del chat
+chat.calculator.result=Resultado
+chat.calculator.divideByZero=No se puede dividir entre cero

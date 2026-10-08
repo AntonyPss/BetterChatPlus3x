@@ -1,0 +1,16 @@
+{
+    /* Primary Button Colors */
+    "$primary_button_default_text_color": [1, 1, 1],
+    "$primary_button_hover_text_color": [1, 1, 1],
+    "$primary_button_pressed_text_color": [1, 1, 1],
+
+    /* Secondary Button Colors */
+    "$secondary_button_default_text_color": [0.098, 0.098, 0.1059],
+    "$secondary_button_hover_text_color": [0.098, 0.098, 0.1059],
+    "$secondary_button_pressed_text_color": [0.098, 0.098, 0.1059],
+
+    /* Danger Button Colors */
+    "$danger_button_default_text_color": [1, 1, 1],
+    "$danger_button_hover_text_color": [1, 1, 1],
+    "$danger_button_pressed_text_color": [1, 1, 1]
+}

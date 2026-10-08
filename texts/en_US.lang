@@ -1,0 +1,13 @@
+chat.coordinateText=Coordinates
+chat.coordinatePosition=Player Position
+chat.coordinateTypePosition=Position
+chat.coordinateTypeFacing=Facing
+chat.notesButtonText=Temporary Notes
+chat.notesTitleText=Your Notes
+chat.notesBox.placeHolder=Write your notes here...
+chat.notesWarning=Notes §cwill disappear§r when leaving the world.
+chat.textBox.placeHolder=Write your text here...
+chat.calculator.title=Calculator
+chat.sidebar.title=Chat tools
+chat.calculator.result=Result
+chat.calculator.divideByZero=Cannot divide by zero
